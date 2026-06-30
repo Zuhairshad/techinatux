@@ -230,23 +230,22 @@ export default function DigitalSolutionsSection() {
       </div>
 
       {/* Header */}
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 py-12 md:py-16 items-end gap-6">
-        <div className="md:col-span-3 flex items-baseline gap-2">
-          <h2 className="font-condensed text-7xl md:text-[140px] font-bold leading-none tracking-tight">
-            DIGITAL
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 py-12 md:py-16 items-end gap-x-6 gap-y-4">
+        <div className="md:col-span-4 flex flex-col gap-0">
+          <div className="flex items-baseline gap-2">
+            <h2 className="font-condensed text-7xl md:text-[100px] lg:text-[120px] xl:text-[140px] font-bold leading-none tracking-tight">
+              DIGITAL
+            </h2>
+            <span className="font-condensed text-xl md:text-3xl text-accent font-bold">.02</span>
+          </div>
+          <h2 className="font-condensed text-7xl md:text-[100px] lg:text-[120px] xl:text-[140px] font-bold leading-none tracking-tight">
+            SOLUTIONS
           </h2>
-          <span className="font-condensed text-xl md:text-3xl text-accent font-bold">.02</span>
         </div>
 
         <div className="md:col-span-1 text-sm font-medium text-white/50 md:pb-4 leading-relaxed">
           Web Services &<br />
           Digital Solutions
-        </div>
-
-        <div className="md:col-span-1 text-right hidden md:block">
-          <span className="font-condensed text-7xl md:text-[140px] font-bold leading-none text-white/90">
-            SOLUTIONS
-          </span>
         </div>
       </div>
 

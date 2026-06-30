@@ -69,6 +69,8 @@ function Scene() {
       <spotLight position={[0, 6, 0]} intensity={0.3} angle={0.5} penumbra={1} color="#ff5500" />
       <Suspense fallback={<Loader />}>
         <Model />
+      </Suspense>
+      <Suspense fallback={null}>
         <Environment preset="city" environmentIntensity={1.0} />
         <ContactShadows
           position={[0, -2, 0]}
