@@ -26,106 +26,187 @@ interface Testimonial {
 
 const team: TeamMember[] = [
   {
-    name: "ALEX MCCLAIN",
-    role: "CEO",
+    name: "ALEJANDRO CALLE",
+    role: "FOUNDER & CEO",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&fit=crop",
   },
   {
-    name: "CATHERINE MONROE",
-    role: "HEAD OF MARKETING",
+    name: "SARAH CHEN",
+    role: "HEAD OF DESIGN",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&fit=crop",
   },
   {
-    name: "MIA LENNOX",
-    role: "HEAD OF DESIGN",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&fit=crop",
-  },
-  {
-    name: "MICHAEL ROSENBERG",
-    role: "FOUNDER",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&fit=crop",
-  },
-  {
-    name: "JAMES WHITAKER",
-    role: "CTO",
+    name: "MARCUS TANAKA",
+    role: "LEAD DEVELOPER",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&fit=crop",
   },
   {
-    name: "CLARISSA WILDER",
-    role: "HEAD OF HR",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&fit=crop",
+    name: "EMMA RODRIGUEZ",
+    role: "HEAD OF MARKETING",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&fit=crop",
   },
 ];
 
 const awards: Award[] = [
   {
-    title: "SITE OF THE YEAR",
+    title: "PAY WHAT YOU CAN",
     year: "'25",
-    category: "Social Media Awards",
+    category: "Community Impact Award",
   },
   {
-    title: "THE ESSENTIAL DESIGN",
-    year: "'25",
-    category: "Social Media Awards",
+    title: "BEST WEB SOLUTIONS",
+    year: "'24",
+    category: "Vancouver Business Awards",
   },
   {
-    title: "BEST WEB DESIGN AGENCY",
+    title: "TOP IT SUPPORT",
     year: "'24",
     category: "Small Business Superstar",
   },
   {
-    title: "DIGITAL HONOR",
+    title: "COMMUNITY CHAMPION",
     year: "'23",
-    category: "Best SaaS App",
+    category: "Local Business Recognition",
   },
+];
+
+const aboutUsParagraphs = [
+  "We're beyond excited to have you with us. At Tech in a Tux IT Services Vancouver, we're more than just an IT company, we're your trusted tech partner. Our services range from donation-based IT support and PC optimization to custom computer builds and beautifully designed, functional websites. Need intuitive UI/UX or secure e-commerce solutions? We've got you covered.",
+  "From virus removal to IT consulting and web design, we handle it all with a blend of professionalism and a personal touch. To us, you're more than a client, you're part of the family.",
+  "Whether you're a passionate gamer, a business owner, or simply need dependable tech support, Tech in a Tux is here for you. Our mission is simple: deliver reliable, accessible IT solutions for businesses and individuals across Vancouver.",
 ];
 
 const testimonials: Testimonial[] = [
   {
-    id: "summa-academy",
-    client: "SUMMA ACADEMY",
-    role: "Director of Digital",
-    quote: "Karta transformed our learning portal. The user experience and visual aesthetic they crafted directly drove a 40% increase in student engagement. Absolutely world-class team.",
+    id: "nhat-ha-minh",
+    client: "NHAT HA MINH",
+    role: "Vancouver, BC",
+    quote: "Appreciate the friendly and efficient service I received. Thank Tech in a Tux for making my experience so positive! If you're thinking about fixing up your current PC or building a brand-new one, I definitely recommend giving it a try.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&fit=crop",
+  },
+  {
+    id: "dj-harshid",
+    client: "DJ HARSHID",
+    role: "Seattle, WA",
+    quote: "This guy's a lifesaver! Helped me fix probs in my old PC, gave solid tech advice & even built my whole CPU, all for free! (yeh, tips/donations are cool but never pushed it). Super chill, professional & always gives honest, no-bs opinions. Def my go-to tech guy now. So glad I found him!",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&fit=crop",
+    isNew: true,
+  },
+  {
+    id: "yadwinder-singh",
+    client: "YADWINDER SINGH",
+    role: "San Diego, CA",
+    quote: "Alejandro went above and beyond in helping me build my dream PC. He handled everything, from collecting all the parts to assembling it flawlessly within a day. Not only did he put everything together with precision, but he also tuned it up for the best performance. His expertise and efficiency made the entire process seamless. If you need someone reliable and skilled for a PC build, Alejandro is the guy to go to. Highly recommend!",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&fit=crop",
     isNew: true,
   },
   {
-    id: "aba",
-    client: "ABA UNITED",
-    role: "Founder",
-    quote: "Working with Karta was seamless. They understood our brand identity instantly and built a custom digital solution that feels modern, fluid, and premium.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&fit=crop",
-  },
-  {
-    id: "zumer-clothing",
-    client: "ZUMER CLOTHING",
-    role: "Marketing lead",
-    quote: "The visual style and digital presence Karta created for our seasonal launch campaign exceeded all expectations. Traffic and online conversions doubled.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&fit=crop",
-  },
-  {
-    id: "dune",
-    client: "DUNE",
-    role: "Co-Founder",
-    quote: "Our search visibility and marketing reach scaled dramatically. The SEO architecture built by their development team is clean, fast, and extremely effective.",
+    id: "anish-mehta",
+    client: "ANISH MEHTA",
+    role: "Local Guide",
+    quote: "What a gem of a guy! Rebuilt my pc within 2 hours free of cost. Extremely helpful and great to talk to! Highly recommend. Love the name 'Tech In A Tux'!",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&fit=crop",
   },
   {
-    id: "rifes",
-    client: "RIFES",
-    role: "Creative Director",
-    quote: "Elegant digital experience. Their UI/UX design is clean, gorgeous, and delivers the exact premium feel our winery needed.",
+    id: "matt-braun",
+    client: "MATT BRAUN",
+    role: "Vancouver, BC",
+    quote: "Great service! Alejandro helped me build my computer into my pelican case. He got the job done quickly and had it back to me the next day. He also helped me reboot an old laptop that no one else could fix. I'm really impressed! I would highly recommend Alejandro 100%.",
     image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=150&fit=crop",
+  },
+  {
+    id: "d-vancouver",
+    client: "D.",
+    role: "Vancouver, BC",
+    quote: "I happen to stumble upon tech in a tux randomly. I've contacted them and talked with Alejandro. He was very accommodating with his busy schedule. He fixed my pc and tweaked it to perform better than its original state. He really has god given talent when it comes to technical support. Definitely will come back and I highly recommend Alejandro to others.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&fit=crop",
+  },
+  {
+    id: "liz-dix",
+    client: "LIZ DIX",
+    role: "Vancouver, BC",
+    quote: "Alejandro was extremely helpful in replacing my Mac's battery. Along with being fast and efficient, he was very informative and walked me through all the steps required for the fix. He was extremely accommodating with pricing and I feel very grateful to have such great tech support in the area! Highly recommend to anyone needing help.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&fit=crop",
+  },
+  {
+    id: "mr-j-futbol",
+    client: "MR J FUTBOL",
+    role: "Vancouver, BC",
+    quote: "Wow. Expectations shattered! When searching for my tech solutions (web design, SEO, app development) I honestly didn't expect to find a company like Tech In A Tux. They have demonstrated top quality work, reasonable pricing, and most importantly, a genuine interest in getting to know me and help me achieve my goals. I am old enough to remember when superb customer service was a minimum expectation for any business and I'm happy to report that Tech In A Tux provides a level of service that far exceeds even old-school standards. Seriously, they're simply outstanding.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&fit=crop",
+  },
+  {
+    id: "ap-a",
+    client: "AP A",
+    role: "Vancouver, BC",
+    quote: "A Truly Exceptional Experience – Tech in a Tux Deserves More Than 5 Stars. It's rare these days to come across someone who not only excels in their craft but also leads with heart and selflessness. That's exactly what I experienced with Tech in a Tux, a small, independent computer repair and custom PC build company based in Vancouver, BC. Founded by Alejandro, this one-person operation is unlike anything I've ever encountered in the tech world — or any industry, for that matter. Thank you, Alejandro. You didn't just fix my computer — you reminded me that kindness and generosity still exist in business. I am deeply grateful.",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&fit=crop",
+  },
+  {
+    id: "ryland",
+    client: "RYLAND",
+    role: "Vancouver, BC",
+    quote: "Alejandro was amazing! I was worried about some hardware being cooked, but he was able to locate that there wasn't a problem, and offered to clean my PC and fully reset and optimize it for me. Everything works a lot faster than when I had first built and optimized it myself. All in 5 hours time not even! Super fast, super kind, and I would fully recommend his services to anyone who needs a problem sorted out! Saved me time and money if I had brought it to a regular service place. 10/10",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&fit=crop",
+  },
+  {
+    id: "arnel-labarda",
+    client: "ARNEL LABARDA",
+    role: "Vancouver, BC",
+    quote: "Alejandro is a down to earth true professional and would recommend him to anyone in need of hardware support. He offered valuable advice and education regarding my PC issues that is helping me get through digital arts school at a very affordable pay by donation cost. I will be working with him in the future when it is time to build a new PC.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&fit=crop",
+  },
+  {
+    id: "little-drowsy",
+    client: "LITTLE DROWSY",
+    role: "Vancouver, BC",
+    quote: "Tech in a Tux is an absolute life saver. Not only is he a super kind and a honest guy but he will also do his best to help you with any problems you have! I had a software corruption and not only was he able to fix it but he was also able to optimize my pc to levels I didn't even know it could do!",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&fit=crop",
+  },
+  {
+    id: "juanito-gallon",
+    client: "JUANITO GALLON",
+    role: "Vancouver, BC",
+    quote: "So pro, Alejandro really helpful with my needs. Just got my PC from him now and no issue. Runs well, now time to play good games. Thank you!!",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&fit=crop",
+  },
+  {
+    id: "varian-the-artist",
+    client: "VARIAN THE ARTIST",
+    role: "Vancouver, BC",
+    quote: "Tech in a Tux not only saved my information from my dying laptop, he was pivotal in saving all of my information. I had important spreadsheets for my business, writings, photos, client information, and so on. I highly recommend Alejandro's services and hope to work with him in some future endeavours. Most Excellent!",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&fit=crop",
+  },
+  {
+    id: "morgan-martin",
+    client: "MORGAN MARTIN",
+    role: "Vancouver, BC",
+    quote: "I had a brand new alienware laptop that I bought for gaming, and wanted to make sure it was running at the top of its game. Tech In A Tux got rid of all the crap apps I'll NEVER use, partitioned my SSD for maximum gaming efficiency, and even put on a script so every startup it deletes all temporary files that would slow down my gaming experience. Efficient, Knowledgeable, Professional, and all around a great guy. I WILL be using his services again!",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&fit=crop",
+  },
+  {
+    id: "kylie-kiefer",
+    client: "KYLIE KIEFER",
+    role: "Vancouver, BC",
+    quote: "10/10 would recommend these guys to anyone! They were absolute life savers. My computer stopped working on me during business hours on a Friday, Alejandro had a new computer built and completely set up for me by Sunday! Plus their mission is awesome.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&fit=crop",
+  },
+  {
+    id: "gabriel-nastari",
+    client: "GABRIEL NASTARI",
+    role: "Vancouver, BC",
+    quote: "If you needing help with your computers notebooks, this is the place to go. Alejandro is extremely dedicated and does the job quickly and efficiently. I've been helped by him many times already.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&fit=crop",
   },
 ];
 
-export default function AboutSection() {
+export default function AboutSection({ hideHeading }: { hideHeading?: boolean }) {
   const [activeTestimonial, setActiveTestimonial] = useState<string | null>("summa-academy");
 
   return (
     <section id="agency" className="bg-[#121212] text-white border-b border-white/10 pt-24 pb-16">
-      
-      {/* About Header */}
+
+      {!hideHeading && (
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 py-12 md:py-16 items-end gap-6">
         <div className="md:col-span-3 flex items-baseline gap-2">
           <h2 className="font-condensed text-7xl md:text-[140px] font-bold leading-none tracking-tight">
@@ -140,29 +221,31 @@ export default function AboutSection() {
 
         <div className="md:col-span-1 text-right hidden md:block">
           <span className="font-condensed text-7xl md:text-[140px] font-bold leading-none text-white/90">
-            35
+            4
           </span>
         </div>
       </div>
+      )}
+
 
       {/* KPI Stats Grid */}
       <div className="border-y border-white/10 bg-[#121212]">
         <div className="max-w-[1600px] mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-white/10">
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
             <span className="text-xs font-bold text-white/40 tracking-wider">YEAR OF ESTABLISHMENT</span>
-            <span className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">2015</span>
+            <span className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">2019</span>
           </div>
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
-            <span className="text-xs font-bold text-white/40 tracking-wider">PROJECTS LAUNCHED</span>
-            <span className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">59</span>
+            <span className="text-xs font-bold text-white/40 tracking-wider">HAPPY CLIENTS</span>
+            <span className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">200+</span>
           </div>
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
-            <span className="text-xs font-bold text-white/40 tracking-wider">INCOME OF LAST YEARS</span>
-            <span className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">37M</span>
+            <span className="text-xs font-bold text-white/40 tracking-wider">YEARS OF EXPERIENCE</span>
+            <span className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">5+</span>
           </div>
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
-            <span className="text-xs font-bold text-white/40 tracking-wider">FULLY SATISFIED CLIENTS</span>
-            <span className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">98%</span>
+            <span className="text-xs font-bold text-white/40 tracking-wider">DONATION-BASED</span>
+            <span className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">100%</span>
           </div>
         </div>
       </div>
@@ -220,6 +303,26 @@ export default function AboutSection() {
           </div>
         </div>
 
+      </div>
+
+      {/* About Us Text */}
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 py-8 md:py-12 border-b border-white/10">
+        <h3 className="text-xs font-bold tracking-widest text-white/40 uppercase mb-8">
+          Tech In A Tux: Community-Focused IT & Web Solutions
+        </h3>
+        <div className="max-w-4xl flex flex-col gap-6">
+          {aboutUsParagraphs.map((p, i) => (
+            <p key={i} className="text-base md:text-lg text-white/70 leading-relaxed">
+              {p}
+            </p>
+          ))}
+        </div>
+        <a
+          href="/about"
+          className="inline-flex items-center gap-2 mt-8 border border-white/20 text-white/80 font-semibold text-sm tracking-wider uppercase px-6 py-3 hover:border-accent hover:text-accent transition-all duration-300"
+        >
+          Learn More About Us
+        </a>
       </div>
 
       {/* Testimonials Interactive Section */}
