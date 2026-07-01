@@ -6,11 +6,13 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <div className="w-full border-b border-white/10 min-h-[80vh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-6 bg-[#121212] text-center relative">
-        <h1 className="font-condensed text-[28vw] md:text-[34vw] font-medium tracking-[-0.03em] text-white leading-none select-none scale-y-[1.15] scale-x-[1.08]">
-          ABOUT US
-        </h1>
-        <div className="absolute bottom-12 md:bottom-20 max-w-4xl mx-auto px-4">
+      <div className="w-full border-b border-white/10 min-h-[80vh] md:min-h-screen flex flex-col items-center justify-between overflow-hidden px-4 md:px-6 bg-[#121212] text-center">
+        <div className="flex-1 flex items-center justify-center w-full">
+          <h1 className="font-condensed text-[28vw] md:text-[34vw] font-medium tracking-[-0.03em] text-white leading-none select-none scale-y-[1.15] scale-x-[1.08]">
+            ABOUT US
+          </h1>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 pt-8 pb-12 md:pb-20">
           <p className="text-lg md:text-2xl lg:text-3xl font-semibold text-white/90 leading-tight mb-2">
             Your Trusted Tech Partner and Web Design Agency in Vancouver & Worldwide
           </p>
