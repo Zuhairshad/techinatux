@@ -12,14 +12,15 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 60) {
+      const collapseAt = window.innerWidth >= 768 ? 60 : 50;
+      if (window.scrollY > collapseAt) {
         setIsScrolled(true);
       } else if (window.scrollY < 20) {
         setIsScrolled(false);
       }
       // overflow-anchor: none (globals.css) is what actually stops the browser
-      // from adjusting scrollY when the spacer resizes — this small 20–60px
-      // dead zone only guards against wheel/trackpad jitter, not the anchor bug.
+      // from adjusting scrollY when the spacer resizes — this small dead zone
+      // only guards against wheel/trackpad jitter, not the anchor bug.
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
