@@ -12,13 +12,12 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
+      const threshold = window.innerWidth >= 768 ? 275 : 255;
+      if (window.scrollY > threshold) {
         setIsScrolled(true);
-      } else if (window.scrollY < 100) {
+      } else if (window.scrollY < 80) {
         setIsScrolled(false);
       }
-      // Dead zone 100–300px prevents the spacer-height change (~196px)
-      // from triggering a scroll-anchor adjustment that flips the state back.
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
