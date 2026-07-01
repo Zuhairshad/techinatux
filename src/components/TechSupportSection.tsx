@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface ServiceCard {
   number: string;
@@ -49,33 +49,81 @@ const services: ServiceCard[] = [
   },
 ];
 
+const ticker = "TECH SUPPORT  •  WEB DESIGN  •  IT SOLUTIONS  •  PC BUILDS  •  CYBER SECURITY  •  DIGITAL MARKETING  •  ";
+
 export default function TechSupportSection() {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const cardsRef  = useRef<HTMLDivElement>(null);
+  const [headerVisible, setHeaderVisible] = useState(false);
+  const [cardsVisible,  setCardsVisible]  = useState(false);
+
+  useEffect(() => {
+    const observe = (el: Element | null, setter: (v: boolean) => void) => {
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) { setter(true); observer.unobserve(entry.target); } },
+        { threshold: 0.05 }
+      );
+      observer.observe(el);
+      return () => observer.disconnect();
+    };
+    const c1 = observe(headerRef.current, setHeaderVisible);
+    const c2 = observe(cardsRef.current,  setCardsVisible);
+    return () => { c1?.(); c2?.(); };
+  }, []);
+
   return (
     <section className="bg-white text-black pt-24 pb-16 border-b border-black/10">
+
       {/* Section Header */}
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 mb-12">
+      <div
+        ref={headerRef}
+        className="max-w-[1600px] mx-auto px-6 md:px-12 mb-12"
+        style={{
+          opacity:    headerVisible ? 1 : 0,
+          transform:  headerVisible ? "translateY(0)" : "translateY(30px)",
+          transition: "opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)",
+        }}
+      >
         <div className="flex items-baseline gap-2 mb-4">
-          <span className="text-xs font-bold tracking-widest text-accent uppercase">
-            Tech Support Services
-          </span>
+          <span className="text-xs font-bold tracking-widest text-accent uppercase">Tech Support Services</span>
           <span className="font-condensed text-xl md:text-3xl text-accent font-bold">.01</span>
         </div>
         <h2 className="font-condensed text-4xl md:text-6xl lg:text-[80px] 2xl:text-[95px] font-bold leading-none tracking-[-0.02em] max-w-5xl">
-          Your Friendly Neighbourhood Tech Provider in Vancouver & Worldwide
+          Your Friendly Neighbourhood Tech Provider in Vancouver &amp; Worldwide
         </h2>
       </div>
 
-      {/* Service Cards Grid */}
-      <div className="max-w-[1600px] mx-auto divide-y divide-black/10">
-        {services.map((service) => (
+      {/* Marquee ticker */}
+      <div
+        className="overflow-hidden border-y border-black/10 py-3 mb-0 bg-black text-white"
+        style={{
+          opacity:    headerVisible ? 1 : 0,
+          transition: "opacity 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s",
+        }}
+      >
+        <div className="flex whitespace-nowrap animate-marquee">
+          <span className="text-xs font-bold tracking-[0.25em] uppercase pr-0">{ticker.repeat(4)}</span>
+          <span className="text-xs font-bold tracking-[0.25em] uppercase pr-0" aria-hidden="true">{ticker.repeat(4)}</span>
+        </div>
+      </div>
+
+      {/* Service Cards */}
+      <div ref={cardsRef} className="max-w-[1600px] mx-auto divide-y divide-black/10">
+        {services.map((service, index) => (
           <div
             key={service.number}
             className="grid grid-cols-1 md:grid-cols-2 md:divide-x divide-black/10"
+            style={{
+              opacity:    cardsVisible ? 1 : 0,
+              transform:  cardsVisible ? "translateY(0)" : "translateY(40px)",
+              transition: `opacity 0.7s cubic-bezier(0.16,1,0.3,1) ${0.1 + index * 0.12}s, transform 0.7s cubic-bezier(0.16,1,0.3,1) ${0.1 + index * 0.12}s`,
+            }}
           >
-            {/* Left: Image */}
+            {/* Image */}
             <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[400px] overflow-hidden">
               <div
-                className="absolute inset-0 bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 scale-100 group-hover:scale-105"
                 style={{ backgroundImage: `url(${service.image})` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -86,20 +134,14 @@ export default function TechSupportSection() {
               </div>
             </div>
 
-            {/* Right: Content */}
+            {/* Content */}
             <div className="flex flex-col justify-center p-8 md:p-12 gap-4">
-              <span className="text-xs font-bold tracking-widest text-black/40 uppercase">
-                {service.number}
-              </span>
+              <span className="text-xs font-bold tracking-widest text-black/40 uppercase">{service.number}</span>
               <h3 className="font-condensed text-3xl md:text-5xl font-bold leading-tight whitespace-pre-line">
                 {service.title}
               </h3>
-              <span className="text-sm font-bold tracking-wider text-accent uppercase">
-                {service.subtitle}
-              </span>
-              <p className="text-base text-black/60 leading-relaxed">
-                {service.description}
-              </p>
+              <span className="text-sm font-bold tracking-wider text-accent uppercase">{service.subtitle}</span>
+              <p className="text-base text-black/60 leading-relaxed">{service.description}</p>
             </div>
           </div>
         ))}

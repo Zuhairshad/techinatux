@@ -70,14 +70,16 @@ function Scene() {
       <Suspense fallback={<Loader />}>
         <Model />
       </Suspense>
-      <Environment preset="city" environmentIntensity={1.0} />
-      <ContactShadows
-        position={[0, -2, 0]}
-        opacity={0.35}
-        scale={8}
-        blur={3}
-        far={5}
-      />
+      <Suspense fallback={null}>
+        <Environment preset="city" environmentIntensity={1.0} />
+        <ContactShadows
+          position={[0, -2, 0]}
+          opacity={0.35}
+          scale={8}
+          blur={3}
+          far={5}
+        />
+      </Suspense>
       <OrbitControls
         enableZoom={false}
         enablePan={false}

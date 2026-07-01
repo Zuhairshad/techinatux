@@ -1,7 +1,39 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Plus } from "lucide-react";
+
+function useCounter(target: number, duration = 1800) {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.unobserve(entry.target); } },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
+    const t0 = performance.now();
+    let raf: number;
+    const tick = (now: number) => {
+      const p = Math.min((now - t0) / duration, 1);
+      setCount(Math.round((1 - Math.pow(1 - p, 3)) * target));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [started, target, duration]);
+
+  return { ref, count };
+}
 
 interface TeamMember {
   name: string;
@@ -201,7 +233,25 @@ const testimonials: Testimonial[] = [
 ];
 
 export default function AboutSection({ hideHeading }: { hideHeading?: boolean }) {
-  const [activeTestimonial, setActiveTestimonial] = useState<string | null>("summa-academy");
+  const [activeTestimonial, setActiveTestimonial] = useState<string | null>(null);
+
+  const stat2019 = useCounter(2019, 1400);
+  const stat200  = useCounter(200,  1800);
+  const stat5    = useCounter(5,    1200);
+  const stat100  = useCounter(100,  1600);
+
+  const teamRef = useRef<HTMLDivElement>(null);
+  const [teamVisible, setTeamVisible] = useState(false);
+  useEffect(() => {
+    const el = teamRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setTeamVisible(true); observer.unobserve(entry.target); } },
+      { threshold: 0.05 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="agency" className="bg-[#121212] text-white border-b border-white/10 pt-24 pb-16">
@@ -233,19 +283,19 @@ export default function AboutSection({ hideHeading }: { hideHeading?: boolean })
         <div className="max-w-[1600px] mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-white/10">
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
             <span className="text-xs font-bold text-white/40 tracking-wider">YEAR OF ESTABLISHMENT</span>
-            <span className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">2019</span>
+            <span ref={stat2019.ref} className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">{stat2019.count || 2019}</span>
           </div>
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
             <span className="text-xs font-bold text-white/40 tracking-wider">HAPPY CLIENTS</span>
-            <span className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">200+</span>
+            <span ref={stat200.ref} className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">{stat200.count}+</span>
           </div>
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
             <span className="text-xs font-bold text-white/40 tracking-wider">YEARS OF EXPERIENCE</span>
-            <span className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">5+</span>
+            <span ref={stat5.ref} className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">{stat5.count}+</span>
           </div>
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
             <span className="text-xs font-bold text-white/40 tracking-wider">DONATION-BASED</span>
-            <span className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">100%</span>
+            <span ref={stat100.ref} className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">{stat100.count}%</span>
           </div>
         </div>
       </div>
@@ -256,9 +306,17 @@ export default function AboutSection({ hideHeading }: { hideHeading?: boolean })
         {/* Team Grid */}
         <div className="p-6 md:p-12">
           <h3 className="text-xs font-bold tracking-widest text-white/40 uppercase mb-8">TEAM</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
-            {team.map((member) => (
-              <div key={member.name} className="group flex flex-col gap-3">
+          <div ref={teamRef} className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+            {team.map((member, i) => (
+              <div
+                key={member.name}
+                className="group flex flex-col gap-3"
+                style={{
+                  opacity:    teamVisible ? 1 : 0,
+                  transform:  teamVisible ? "translateY(0)" : "translateY(30px)",
+                  transition: `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s, transform 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s`,
+                }}
+              >
                 <div className="relative aspect-square overflow-hidden rounded-full border border-white/10 bg-white/5">
                   <img
                     src={member.image}

@@ -53,10 +53,10 @@ export default function ContactSection() {
                 WAYS TO CONTACT
               </span>
               <a
-                href="mailto:alex@techinatux.com"
+                href="mailto:hello@techinatux.com"
                 className="font-condensed text-xl sm:text-3xl md:text-5xl font-bold tracking-wider hover:text-accent transition-colors block mb-4 break-words"
               >
-                ALEX@TECHINATUX.COM
+                HELLO@TECHINATUX.COM
               </a>
               <a 
                 href="tel:+16045054487" 

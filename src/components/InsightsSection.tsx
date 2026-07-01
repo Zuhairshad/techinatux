@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 interface Insight {
@@ -28,10 +28,38 @@ const insights: Insight[] = [
 ];
 
 export default function InsightsSection() {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const cardsRef  = useRef<HTMLDivElement>(null);
+  const [headerVisible, setHeaderVisible] = useState(false);
+  const [cardsVisible,  setCardsVisible]  = useState(false);
+
+  useEffect(() => {
+    const observe = (el: Element | null, setter: (v: boolean) => void) => {
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) { setter(true); observer.unobserve(entry.target); } },
+        { threshold: 0.05 }
+      );
+      observer.observe(el);
+      return () => observer.disconnect();
+    };
+    const c1 = observe(headerRef.current, setHeaderVisible);
+    const c2 = observe(cardsRef.current,  setCardsVisible);
+    return () => { c1?.(); c2?.(); };
+  }, []);
+
   return (
     <section id="insights" className="bg-white text-black pt-24 pb-16 border-b border-black/10">
       {/* Insights Header */}
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 py-12 md:py-16 items-end gap-6">
+      <div
+        ref={headerRef}
+        className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 py-12 md:py-16 items-end gap-6"
+        style={{
+          opacity:    headerVisible ? 1 : 0,
+          transform:  headerVisible ? "translateY(0)" : "translateY(30px)",
+          transition: "opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)",
+        }}
+      >
         <div className="md:col-span-3 flex items-baseline gap-2">
           <h2 className="font-condensed text-5xl md:text-[100px] font-bold leading-none tracking-tight">
             INSIGHTS
@@ -59,12 +87,17 @@ export default function InsightsSection() {
       </div>
 
       {/* Blog Cards Grid */}
-      <div className="max-w-[1600px] mx-auto border-t border-black/10">
+      <div ref={cardsRef} className="max-w-[1600px] mx-auto border-t border-black/10">
         <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black/10">
           {insights.map((item, idx) => (
             <div
               key={idx}
-              className="group relative overflow-hidden aspect-[4/3] md:aspect-auto md:min-h-[500px] flex flex-col justify-end p-8 md:p-10 cursor-pointer"
+              className="group relative overflow-hidden aspect-[4/3] md:aspect-auto md:min-h-[500px] flex flex-col justify-end p-8 md:p-10"
+              style={{
+                opacity:    cardsVisible ? 1 : 0,
+                transform:  cardsVisible ? "translateY(0)" : "translateY(40px)",
+                transition: `opacity 0.7s cubic-bezier(0.16,1,0.3,1) ${idx * 0.12}s, transform 0.7s cubic-bezier(0.16,1,0.3,1) ${idx * 0.12}s`,
+              }}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 scale-100 group-hover:scale-105"

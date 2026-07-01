@@ -12,15 +12,13 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const y = window.scrollY;
-      setIsScrolled(prev => {
-        // Collapse only after scrolling well past the spacer height (280px),
-        // so the spacer is fully above the viewport before it shrinks.
-        // This prevents scroll-anchoring from re-adjusting scrollY into the loop zone.
-        if (!prev && y > 200) return true;
-        if (prev && y < 80) return false;
-        return prev;
-      });
+      if (window.scrollY > 300) {
+        setIsScrolled(true);
+      } else if (window.scrollY < 100) {
+        setIsScrolled(false);
+      }
+      // Dead zone 100–300px prevents the spacer-height change (~196px)
+      // from triggering a scroll-anchor adjustment that flips the state back.
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
