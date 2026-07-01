@@ -179,7 +179,7 @@ export default function WhyChooseSection() {
             Why Us
           </span>
         </div>
-        <h2 className="font-condensed text-5xl md:text-7xl lg:text-[100px] font-bold leading-none tracking-[-0.02em] max-w-5xl mb-6">
+        <h2 className="font-condensed text-4xl md:text-6xl lg:text-[80px] font-bold leading-none tracking-[-0.02em] max-w-5xl mb-6">
           Why Choose Us for Your IT & Web Needs in Vancouver & Worldwide
         </h2>
 

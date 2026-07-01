@@ -72,7 +72,7 @@ export default function HomeFAQSection() {
             Questions & Answers
           </span>
         </div>
-        <h2 className="font-condensed text-5xl md:text-7xl lg:text-[100px] font-bold leading-none tracking-[-0.02em] max-w-4xl mb-4">
+        <h2 className="font-condensed text-4xl md:text-6xl lg:text-[80px] font-bold leading-none tracking-[-0.02em] max-w-4xl mb-4">
           Frequently Asked Questions
         </h2>
         <p className="text-base md:text-lg text-white/50 max-w-3xl leading-relaxed mb-12">

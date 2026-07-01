@@ -18,7 +18,7 @@ const projects: Project[] = [
     title: "FAIRAGORA",
     year: "2025",
     categories: ["Web Design"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
     isNew: true,
   },
   {
@@ -26,35 +26,35 @@ const projects: Project[] = [
     title: "TRIPLEXOG",
     year: "2025",
     categories: ["Web Design", "E-Commerce"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "precious-paws",
     title: "PRECIOUS PAWS",
     year: "2024",
     categories: ["Web Design", "Branding"],
-    image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1200&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "animal-acid",
     title: "ANIMAL ACID",
     year: "2024",
     categories: ["Branding"],
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "glove-pop",
     title: "THE GLOVE POP",
     year: "2025",
     categories: ["Web Design", "E-Commerce"],
-    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=1200&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&auto=format&fit=crop&q=80",
   },
   {
     id: "atlanta-faze",
     title: "ATLANTA FAZE",
     year: "2025",
     categories: ["IT Solutions"],
-    image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=1200&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&auto=format&fit=crop&q=80",
     isNew: true,
   },
 ];
@@ -80,7 +80,7 @@ export default function WorksSection() {
       {/* Works Header */}
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 py-12 md:py-16 items-end gap-6">
         <div className="md:col-span-3 flex items-baseline gap-2">
-          <h2 className="font-condensed text-7xl md:text-[140px] font-bold leading-none tracking-tight text-black">
+          <h2 className="font-condensed text-5xl md:text-[100px] font-bold leading-none tracking-tight text-black">
             WORKS
           </h2>
           <span className="font-condensed text-xl md:text-3xl text-accent font-bold">.01</span>
@@ -94,7 +94,7 @@ export default function WorksSection() {
         </div>
 
         <div className="md:col-span-1 text-right hidden md:block">
-          <span className="font-condensed text-7xl md:text-[140px] font-bold leading-none text-black/90">
+          <span className="font-condensed text-5xl md:text-[100px] font-bold leading-none text-black/90">
             200+
           </span>
         </div>
@@ -183,7 +183,7 @@ export default function WorksSection() {
           {projects.map((p) => (
             <div key={p.id} className="group py-6 md:py-8 flex flex-col md:flex-row md:justify-between md:items-center transition-all duration-300 hover:opacity-85">
               <div className="flex items-start gap-2">
-                <h4 className="font-condensed text-5xl sm:text-7xl md:text-8xl font-medium tracking-normal text-black group-hover:text-accent transition-colors leading-none">
+                <h4 className="font-condensed text-4xl sm:text-6xl md:text-7xl font-medium tracking-normal text-black group-hover:text-accent transition-colors leading-none">
                   {p.title}
                 </h4>
                 <span className="font-condensed text-sm sm:text-base font-medium text-black/40 relative top-1 md:top-2">

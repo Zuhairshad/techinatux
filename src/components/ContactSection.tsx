@@ -22,14 +22,14 @@ export default function ContactSection() {
       {/* Contact Header */}
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 py-12 md:py-16 items-end gap-6">
         <div className="md:col-span-3 flex items-baseline gap-2">
-          <h2 className="font-condensed text-7xl md:text-[140px] font-bold leading-none tracking-tight">
+          <h2 className="font-condensed text-5xl md:text-[100px] font-bold leading-none tracking-tight">
             CONTACT
           </h2>
           <span className="font-condensed text-xl md:text-3xl text-accent font-bold">.04</span>
         </div>
         
         <div className="md:col-span-2 text-right hidden md:block">
-          <span className="font-condensed text-7xl md:text-[140px] font-bold leading-none text-white/95">
+          <span className="font-condensed text-5xl md:text-[100px] font-bold leading-none text-white/95">
             US
           </span>
         </div>
