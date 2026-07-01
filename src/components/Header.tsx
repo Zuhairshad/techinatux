@@ -12,7 +12,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const threshold = window.innerWidth >= 768 ? 185 : 165;
+      const threshold = window.innerWidth >= 768 ? 205 : 185;
       if (window.scrollY > threshold) {
         setIsScrolled(true);
       } else if (window.scrollY < 60) {
