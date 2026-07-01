@@ -47,14 +47,14 @@ export default function ContactSection() {
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
           
           {/* Ways to Contact Column */}
-          <div className="p-8 md:p-12 flex flex-col justify-between h-[360px]">
+          <div className="p-8 md:p-12 flex flex-col justify-between min-h-[280px] md:h-[360px]">
             <div>
               <span className="text-xs font-bold text-white/40 tracking-widest uppercase block mb-6">
                 WAYS TO CONTACT
               </span>
-              <a 
-                href="mailto:alex@techinatux.com" 
-                className="font-condensed text-3xl md:text-5xl font-bold tracking-wider hover:text-accent transition-colors block mb-4"
+              <a
+                href="mailto:alex@techinatux.com"
+                className="font-condensed text-xl sm:text-3xl md:text-5xl font-bold tracking-wider hover:text-accent transition-colors block mb-4 break-words"
               >
                 ALEX@TECHINATUX.COM
               </a>
@@ -82,7 +82,7 @@ export default function ContactSection() {
 
 
           {/* Subscribe Form Column */}
-          <div className="p-8 md:p-12 flex flex-col justify-between h-[360px]">
+          <div className="p-8 md:p-12 flex flex-col justify-between min-h-[280px] md:h-[360px]">
             <div>
               <span className="text-xs font-bold text-white/40 tracking-widest uppercase block mb-6">
                 SUBSCRIBE FOR UPDATES

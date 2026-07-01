@@ -19,13 +19,13 @@ export default function HeroSection() {
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 py-12 md:py-24">
 
         {/* Top hero split: text left, 3D model right */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-24 items-center mb-16">
 
           {/* Left: Headings + tagline */}
           <div>
             {/* Heading Rows */}
             <div className="mb-6">
-              <h1 className="font-condensed text-5xl sm:text-7xl md:text-[100px] lg:text-[120px] xl:text-[140px] font-bold leading-none tracking-[-0.03em] scale-y-[1.15] scale-x-[1.08] origin-left">
+              <h1 className="font-condensed text-5xl sm:text-7xl md:text-[90px] lg:text-[110px] xl:text-[130px] 2xl:text-[150px] font-bold leading-none tracking-[-0.03em] md:scale-y-[1.15] md:scale-x-[1.08] md:origin-left">
                 AFFORDABLE<br />
                 WEB DESIGN
               </h1>
@@ -79,10 +79,10 @@ export default function HeroSection() {
 
         {/* Tech In A Tux heading */}
         <div className="mb-10 border-t border-white/10 pt-10">
-          <h2 className="font-condensed text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-[-0.02em]">
+          <h2 className="font-condensed text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-tight tracking-[-0.02em]">
             TECH IN A TUX
           </h2>
-          <p className="font-condensed text-xl md:text-3xl lg:text-4xl font-bold leading-tight text-white/70 mt-2">
+          <p className="font-condensed text-xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-white/70 mt-2">
             Community-Focused IT & Web Solutions
           </p>
         </div>
