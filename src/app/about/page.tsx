@@ -6,10 +6,20 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <div className="w-full border-b border-white/10 min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden px-4 md:px-6 bg-[#121212] text-center">
-        <h1 className="font-condensed text-[28vw] md:text-[34vw] font-medium tracking-[-0.03em] text-white leading-none select-none scale-y-[1.15] scale-x-[1.08]">
-          ABOUT US
-        </h1>
+      <div className="w-full border-b border-white/10 min-h-[80vh] md:min-h-screen flex flex-col items-center justify-between overflow-hidden px-4 md:px-6 bg-[#121212] text-center">
+        <div className="flex-1 flex items-center justify-center w-full mt-28 md:mt-40">
+          <h1 className="font-condensed text-[24vw] md:text-[28vw] font-medium tracking-[-0.03em] text-white leading-none select-none scale-y-[1.15] scale-x-[1.08]">
+            ABOUT US
+          </h1>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 pt-8 pb-12 md:pb-20">
+          <p className="text-lg md:text-2xl lg:text-3xl font-semibold text-white/90 leading-tight mb-2">
+            Your Trusted Tech Partner and Web Design Agency in Vancouver & Worldwide
+          </p>
+          <p className="text-sm md:text-base text-white/50 max-w-2xl mx-auto">
+            Expert IT Support, Web Design & Development, and Custom PC Solutions
+          </p>
+        </div>
       </div>
 
       {/* Our Story section */}
@@ -140,23 +150,26 @@ export default function AboutPage() {
           <p className="text-base md:text-lg text-white/60 leading-relaxed max-w-4xl mb-12">
             Over the past five years, Tech in a Tux has been recognized for its commitment to excellence and community service. We are proud to have received accolades for our Pay What You Can Tech support & Web Design initiatives and our contributions to the local community.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              { title: "Pay What You Can", year: "'25", category: "Community Impact Award" },
-              { title: "Best Web Solutions", year: "'24", category: "Vancouver Business Awards" },
-              { title: "Top IT Support", year: "'24", category: "Small Business Superstar" },
-              { title: "Community Champion", year: "'23", category: "Local Business Recognition" },
+              { title: "BBB Accredited Business — A+ Rating", image: "/awards/BBB-Award.jpg" },
+              { title: "Featured in Top 100 Magazine", image: "/awards/100-Magazine-award.png" },
+              { title: "DesignRush Verified Agency", image: "/awards/Designrush-award.jpg" },
+              { title: "CorporateLiveWire Innovation & Excellence Award", image: "/awards/CorporateLiveWire-Award.png" },
+              { title: "Consumer Choice Award for Business Excellence", image: "/awards/Consumer-Choice-Award.png" },
+              { title: "The Best Vancouver", image: "/awards/The-Best-Vancouver-Award.png" },
             ].map((award) => (
-              <div key={award.title} className="border border-white/10 p-8 flex items-center justify-between group hover:border-accent/40 transition-all duration-300">
-                <div className="flex flex-col gap-1">
-                  <div className="flex items-baseline gap-2">
-                    <h3 className="font-condensed text-2xl md:text-4xl font-bold tracking-wide text-white group-hover:text-accent transition-colors">
-                      {award.title}
-                    </h3>
-                    <span className="font-condensed text-sm font-bold text-accent">{award.year}</span>
-                  </div>
-                  <span className="text-xs font-bold text-white/40 uppercase tracking-widest">{award.category}</span>
-                </div>
+              <div
+                key={award.title}
+                title={award.title}
+                className="group flex items-center justify-center h-36 md:h-44 bg-white rounded-md border border-white/10 p-6 hover:border-accent/60 transition-all duration-300"
+              >
+                <img
+                  src={award.image}
+                  alt={award.title}
+                  loading="lazy"
+                  className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
             ))}
           </div>
@@ -173,7 +186,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="border border-white/10 p-8 flex flex-col items-center text-center group hover:border-accent/40 transition-all duration-300">
               <div className="w-24 h-24 rounded-full bg-white/5 border border-white/10 mb-5 flex items-center justify-center overflow-hidden">
-                <span className="font-condensed text-3xl font-bold text-accent">AC</span>
+                <img
+                  src="/alejandro-calle.png"
+                  alt="Alejandro Calle"
+                  loading="lazy"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                />
               </div>
               <h3 className="font-condensed text-2xl font-bold tracking-wide text-white group-hover:text-accent transition-colors">Alejandro Calle</h3>
               <span className="text-xs font-bold tracking-widest text-white/40 uppercase mt-1 mb-3">Founder & CEO</span>

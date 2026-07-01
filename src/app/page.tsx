@@ -1,5 +1,6 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection";
+import TrustStrip from "@/components/TrustStrip";
 import TechSupportSection from "@/components/TechSupportSection";
 import DigitalSolutionsSection from "@/components/DigitalSolutionsSection";
 import WorksSection from "@/components/WorksSection";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <TrustStrip />
       <TechSupportSection />
       <DigitalSolutionsSection />
       <WorksSection />

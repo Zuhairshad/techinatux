@@ -38,13 +38,13 @@ function useCounter(target: number, duration = 1800) {
 interface TeamMember {
   name: string;
   role: string;
-  image: string;
+  image?: string;
+  initials: string;
 }
 
 interface Award {
   title: string;
-  year: string;
-  category: string;
+  image: string;
 }
 
 interface Testimonial {
@@ -60,46 +60,28 @@ const team: TeamMember[] = [
   {
     name: "ALEJANDRO CALLE",
     role: "FOUNDER & CEO",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&fit=crop",
+    image: "/alejandro-calle.png",
+    initials: "AC",
   },
   {
-    name: "SARAH CHEN",
-    role: "HEAD OF DESIGN",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&fit=crop",
+    name: "AMAZING ALI",
+    role: "LEAD DEV",
+    initials: "AA",
   },
   {
-    name: "MARCUS TANAKA",
-    role: "LEAD DEVELOPER",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&fit=crop",
-  },
-  {
-    name: "EMMA RODRIGUEZ",
-    role: "HEAD OF MARKETING",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&fit=crop",
+    name: "DEVTRIOS",
+    role: "SR. DEVELOPERS",
+    initials: "DT",
   },
 ];
 
 const awards: Award[] = [
-  {
-    title: "PAY WHAT YOU CAN",
-    year: "'25",
-    category: "Community Impact Award",
-  },
-  {
-    title: "BEST WEB SOLUTIONS",
-    year: "'24",
-    category: "Vancouver Business Awards",
-  },
-  {
-    title: "TOP IT SUPPORT",
-    year: "'24",
-    category: "Small Business Superstar",
-  },
-  {
-    title: "COMMUNITY CHAMPION",
-    year: "'23",
-    category: "Local Business Recognition",
-  },
+  { title: "BBB Accredited Business — A+ Rating", image: "/awards/BBB-Award.jpg" },
+  { title: "Featured in Top 100 Magazine", image: "/awards/100-Magazine-award.png" },
+  { title: "DesignRush Verified Agency", image: "/awards/Designrush-award.jpg" },
+  { title: "CorporateLiveWire Innovation & Excellence Award", image: "/awards/CorporateLiveWire-Award.png" },
+  { title: "Consumer Choice Award for Business Excellence", image: "/awards/Consumer-Choice-Award.png" },
+  { title: "The Best Vancouver", image: "/awards/The-Best-Vancouver-Award.png" },
 ];
 
 const aboutUsParagraphs = [
@@ -271,7 +253,7 @@ export default function AboutSection({ hideHeading }: { hideHeading?: boolean })
 
         <div className="md:col-span-1 text-right hidden md:block">
           <span className="font-condensed text-5xl md:text-[100px] font-bold leading-none text-white/90">
-            4
+            3
           </span>
         </div>
       </div>
@@ -317,12 +299,18 @@ export default function AboutSection({ hideHeading }: { hideHeading?: boolean })
                   transition: `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s, transform 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s`,
                 }}
               >
-                <div className="relative aspect-square overflow-hidden rounded-full border border-white/10 bg-white/5">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    loading="lazy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
-                  />
+                <div className="relative aspect-square overflow-hidden rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      loading="lazy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                    />
+                  ) : (
+                    <span className="font-condensed text-2xl md:text-3xl font-bold text-accent">
+                      {member.initials}
+                    </span>
+                  )}
                 </div>
                 <div className="flex flex-col gap-0.5">
                   <span className="text-sm font-semibold tracking-wide text-white group-hover:text-accent transition-colors">
@@ -341,20 +329,19 @@ export default function AboutSection({ hideHeading }: { hideHeading?: boolean })
         <div className="p-6 md:p-12 flex flex-col justify-between">
           <div>
             <h3 className="text-xs font-bold tracking-widest text-white/40 uppercase mb-8">AWARDS</h3>
-            <div className="divide-y divide-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {awards.map((award) => (
-                <div key={award.title} className="py-5 flex justify-between items-center group">
-                  <div className="flex flex-col gap-1">
-                    <div className="flex items-baseline gap-2">
-                      <h4 className="font-condensed text-2xl md:text-3xl font-bold tracking-wider text-white group-hover:text-accent transition-colors">
-                        {award.title}
-                      </h4>
-                      <span className="font-condensed text-sm font-bold text-accent">{award.year}</span>
-                    </div>
-                    <span className="text-[11px] font-bold text-white/40 uppercase tracking-widest">
-                      {award.category}
-                    </span>
-                  </div>
+                <div
+                  key={award.title}
+                  title={award.title}
+                  className="group flex items-center justify-center h-28 md:h-32 bg-white rounded-md border border-white/10 p-4 hover:border-accent/60 transition-all duration-300"
+                >
+                  <img
+                    src={award.image}
+                    alt={award.title}
+                    loading="lazy"
+                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               ))}
             </div>

@@ -12,12 +12,15 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const threshold = window.innerWidth >= 768 ? 205 : 185;
-      if (window.scrollY > threshold) {
+      const collapseAt = window.innerWidth >= 768 ? 60 : 50;
+      if (window.scrollY > collapseAt) {
         setIsScrolled(true);
-      } else if (window.scrollY < 60) {
+      } else if (window.scrollY < 20) {
         setIsScrolled(false);
       }
+      // overflow-anchor: none (globals.css) is what actually stops the browser
+      // from adjusting scrollY when the spacer resizes — this small dead zone
+      // only guards against wheel/trackpad jitter, not the anchor bug.
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -53,9 +56,11 @@ export default function Header() {
 
           {!isScrolled && (
             <div className="flex items-center my-auto">
-              <div className="bg-black text-white flex items-center justify-center font-condensed font-bold rounded-sm w-14 h-14 text-3xl md:w-16 md:h-16 md:text-4xl lg:w-20 lg:h-20 lg:text-5xl">
-                K.
-              </div>
+              <img
+                src="/tech-in-a-tux-logo.png"
+                alt="Tech In A Tux"
+                className="h-10 md:h-12 lg:h-14 w-auto object-contain"
+              />
             </div>
           )}
 
