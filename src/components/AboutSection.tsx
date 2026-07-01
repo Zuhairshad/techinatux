@@ -259,7 +259,7 @@ export default function AboutSection({ hideHeading }: { hideHeading?: boolean })
       {!hideHeading && (
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 py-12 md:py-16 items-end gap-6">
         <div className="md:col-span-3 flex items-baseline gap-2">
-          <h2 className="font-condensed text-7xl md:text-[140px] font-bold leading-none tracking-tight">
+          <h2 className="font-condensed text-5xl md:text-[100px] font-bold leading-none tracking-tight">
             ABOUT
           </h2>
           <span className="font-condensed text-xl md:text-3xl text-accent font-bold">.02</span>
@@ -270,7 +270,7 @@ export default function AboutSection({ hideHeading }: { hideHeading?: boolean })
         </div>
 
         <div className="md:col-span-1 text-right hidden md:block">
-          <span className="font-condensed text-7xl md:text-[140px] font-bold leading-none text-white/90">
+          <span className="font-condensed text-5xl md:text-[100px] font-bold leading-none text-white/90">
             4
           </span>
         </div>
@@ -283,19 +283,19 @@ export default function AboutSection({ hideHeading }: { hideHeading?: boolean })
         <div className="max-w-[1600px] mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-white/10">
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
             <span className="text-xs font-bold text-white/40 tracking-wider">YEAR OF ESTABLISHMENT</span>
-            <span ref={stat2019.ref} className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">{stat2019.count || 2019}</span>
+            <span ref={stat2019.ref} className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">{stat2019.count || 2019}</span>
           </div>
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
             <span className="text-xs font-bold text-white/40 tracking-wider">HAPPY CLIENTS</span>
-            <span ref={stat200.ref} className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">{stat200.count}+</span>
+            <span ref={stat200.ref} className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">{stat200.count}+</span>
           </div>
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
             <span className="text-xs font-bold text-white/40 tracking-wider">YEARS OF EXPERIENCE</span>
-            <span ref={stat5.ref} className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">{stat5.count}+</span>
+            <span ref={stat5.ref} className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">{stat5.count}+</span>
           </div>
           <div className="p-6 md:p-8 flex flex-col justify-between h-[160px] md:h-[200px]">
             <span className="text-xs font-bold text-white/40 tracking-wider">DONATION-BASED</span>
-            <span ref={stat100.ref} className="font-condensed text-5xl md:text-7xl font-bold tracking-wide">{stat100.count}%</span>
+            <span ref={stat100.ref} className="font-condensed text-4xl md:text-5xl font-bold tracking-wide">{stat100.count}%</span>
           </div>
         </div>
       </div>
@@ -321,7 +321,7 @@ export default function AboutSection({ hideHeading }: { hideHeading?: boolean })
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                    loading="lazy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
                   />
                 </div>
                 <div className="flex flex-col gap-0.5">
@@ -413,7 +413,7 @@ export default function AboutSection({ hideHeading }: { hideHeading?: boolean })
                     <img
                       src={t.image}
                       alt={t.client}
-                      className="w-10 h-10 object-cover rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all duration-300"
+                      loading="lazy" className="w-10 h-10 object-cover rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all duration-300"
                     />
                     <Plus className={`w-5 h-5 text-white/40 group-hover:text-white transition-transform duration-300 ${
                       isOpen ? "rotate-45 text-accent!" : ""

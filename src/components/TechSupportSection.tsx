@@ -89,7 +89,7 @@ export default function TechSupportSection() {
           <span className="text-xs font-bold tracking-widest text-accent uppercase">Tech Support Services</span>
           <span className="font-condensed text-xl md:text-3xl text-accent font-bold">.01</span>
         </div>
-        <h2 className="font-condensed text-5xl md:text-7xl lg:text-[100px] font-bold leading-none tracking-[-0.02em] max-w-4xl">
+        <h2 className="font-condensed text-4xl md:text-6xl lg:text-[80px] 2xl:text-[95px] font-bold leading-none tracking-[-0.02em] max-w-5xl">
           Your Friendly Neighbourhood Tech Provider in Vancouver &amp; Worldwide
         </h2>
       </div>

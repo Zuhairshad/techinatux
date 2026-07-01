@@ -22,14 +22,14 @@ export default function ContactSection() {
       {/* Contact Header */}
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-5 py-12 md:py-16 items-end gap-6">
         <div className="md:col-span-3 flex items-baseline gap-2">
-          <h2 className="font-condensed text-7xl md:text-[140px] font-bold leading-none tracking-tight">
+          <h2 className="font-condensed text-5xl md:text-[100px] font-bold leading-none tracking-tight">
             CONTACT
           </h2>
           <span className="font-condensed text-xl md:text-3xl text-accent font-bold">.04</span>
         </div>
         
         <div className="md:col-span-2 text-right hidden md:block">
-          <span className="font-condensed text-7xl md:text-[140px] font-bold leading-none text-white/95">
+          <span className="font-condensed text-5xl md:text-[100px] font-bold leading-none text-white/95">
             US
           </span>
         </div>
@@ -47,14 +47,14 @@ export default function ContactSection() {
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
           
           {/* Ways to Contact Column */}
-          <div className="p-8 md:p-12 flex flex-col justify-between h-[360px]">
+          <div className="p-8 md:p-12 flex flex-col justify-between min-h-[280px] md:h-[360px]">
             <div>
               <span className="text-xs font-bold text-white/40 tracking-widest uppercase block mb-6">
                 WAYS TO CONTACT
               </span>
-              <a 
-                href="mailto:hello@techinatux.com" 
-                className="font-condensed text-3xl md:text-5xl font-bold tracking-wider hover:text-accent transition-colors block mb-4"
+              <a
+                href="mailto:hello@techinatux.com"
+                className="font-condensed text-xl sm:text-3xl md:text-5xl font-bold tracking-wider hover:text-accent transition-colors block mb-4 break-words"
               >
                 HELLO@TECHINATUX.COM
               </a>
@@ -82,7 +82,7 @@ export default function ContactSection() {
 
 
           {/* Subscribe Form Column */}
-          <div className="p-8 md:p-12 flex flex-col justify-between h-[360px]">
+          <div className="p-8 md:p-12 flex flex-col justify-between min-h-[280px] md:h-[360px]">
             <div>
               <span className="text-xs font-bold text-white/40 tracking-widest uppercase block mb-6">
                 SUBSCRIBE FOR UPDATES

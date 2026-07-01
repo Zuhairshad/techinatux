@@ -21,6 +21,12 @@
   --font-body: var(--font-body);
 }
 
+html {
+  /* Disable scroll anchoring globally — prevents Chrome from adjusting scrollY
+     when the fixed header spacer changes height, which caused the navbar flicker loop */
+  overflow-anchor: none;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -41,6 +47,12 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #999;
+}
+
+/* Smooth font rendering on high-DPI displays */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Base styles for premium grid dividers */

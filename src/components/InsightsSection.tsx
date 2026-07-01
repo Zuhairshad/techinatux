@@ -61,7 +61,7 @@ export default function InsightsSection() {
         }}
       >
         <div className="md:col-span-3 flex items-baseline gap-2">
-          <h2 className="font-condensed text-7xl md:text-[140px] font-bold leading-none tracking-tight">
+          <h2 className="font-condensed text-5xl md:text-[100px] font-bold leading-none tracking-tight">
             INSIGHTS
           </h2>
           <span className="font-condensed text-xl md:text-3xl text-accent font-bold">.03</span>
@@ -73,7 +73,7 @@ export default function InsightsSection() {
         </div>
 
         <div className="md:col-span-1 text-right hidden md:block">
-          <span className="font-condensed text-7xl md:text-[140px] font-bold leading-none text-black/90">
+          <span className="font-condensed text-5xl md:text-[100px] font-bold leading-none text-black/90">
             03
           </span>
         </div>

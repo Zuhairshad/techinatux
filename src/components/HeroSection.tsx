@@ -88,7 +88,7 @@ export default function HeroSection() {
           {/* Left */}
           <div>
             <div className="mb-6">
-              <h1 className="font-condensed text-5xl sm:text-7xl md:text-[100px] lg:text-[120px] xl:text-[140px] font-bold leading-none tracking-[-0.03em] scale-y-[1.15] scale-x-[1.08] origin-left">
+              <h1 className="font-condensed text-4xl sm:text-5xl md:text-[72px] lg:text-[88px] xl:text-[105px] 2xl:text-[120px] font-bold leading-none tracking-[-0.03em] scale-y-[1.15] scale-x-[1.08] origin-left">
                 <span className="overflow-hidden block">
                   <span className="block" style={reveal(0.05)}>AFFORDABLE</span>
                 </span>
